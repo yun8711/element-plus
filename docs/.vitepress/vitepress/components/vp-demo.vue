@@ -16,6 +16,8 @@ const props = defineProps<{
   description: string
 }>()
 
+// console.log('props', props)
+
 const vm = getCurrentInstance()!
 
 const { copy, isSupported } = useClipboard({
@@ -239,6 +241,7 @@ const copyCode = async () => {
     right: 0;
     bottom: 0;
     z-index: 10;
+
     span {
       font-size: 14px;
       margin-left: 10px;

@@ -22,7 +22,9 @@ useToggleWidgets(isFullScreen, () => {
 
 <template>
   <header :class="{ navbar: true, 'has-sidebar': hasSidebar }">
+    <!-- 常规展示下的顶部导航栏 -->
     <VpNavbar :full-screen="isFullScreen" @toggle="toggleFullScreen" />
+    <!-- h5模式下的全屏打开时导航栏 -->
     <VpNavFull :full-screen="isFullScreen" class="full-screen" @close="close" />
   </header>
 </template>

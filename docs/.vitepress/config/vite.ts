@@ -76,7 +76,7 @@ export const getViteConfig = ({ mode }: { mode: string }): ViteConfig => {
     },
     plugins: [
       vueJsx(),
-
+      // 自动导入组件
       // https://github.com/antfu/unplugin-vue-components
       Components({
         dirs: ['.vitepress/vitepress/components'],

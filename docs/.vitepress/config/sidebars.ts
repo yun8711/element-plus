@@ -23,6 +23,7 @@ function getComponentsSideBar() {
 // return sidebar with language configs.
 // this might create duplicated data but the overhead is ignorable
 const getSidebars = () => {
+  // console.log('getComponentsSideBar()', getComponentsSideBar())
   return {
     '/guide/': getGuideSidebar(),
     '/component/': getComponentsSideBar(),

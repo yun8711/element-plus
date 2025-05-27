@@ -10,6 +10,7 @@ import type { CSSProperties } from 'vue'
 import { isDark } from '~/composables/dark'
 
 const target = ref<HTMLElement | null>(null)
+// 创建视差效果对象
 const parallax = reactive(useParallax(target))
 const jumbotronRedOffset = ref(0)
 const jumbotronRef = ref<HTMLElement | null>(null)
@@ -110,18 +111,20 @@ const handleScroll = useThrottleFn(() => {
     jumbotronRedOffset.value = calHeight
   }
 }, 10)
-
+// 监听页面滚动事件
 useEventListener(window, 'scroll', handleScroll)
 </script>
 
 <template>
   <div ref="target" class="home-page">
+    <!-- 首页内容-标题区域 -->
     <div class="banner" text="center">
       <div class="banner-desc">
         <h1>{{ homeLang['title'] }}</h1>
         <p>{{ homeLang['title_sub'] }}</p>
       </div>
     </div>
+    <!-- 首页内容-图片区域：由多个svg图片组合 -->
     <div ref="jumbotronRef" class="jumbotron">
       <div class="parallax-container" :style="containerStyle">
         <div :style="cardStyle">
@@ -138,14 +141,18 @@ useEventListener(window, 'scroll', handleScroll)
         </div>
       </div>
     </div>
+    <!-- 首页内容-图片区域：移动端图片 -->
     <img
       :src="`/images/theme-index-blue${isDark ? '-dark' : ''}.png`"
       alt="banner"
       class="mobile-banner"
     />
+    <!-- 首页内容-赞助商区域 -->
     <HomeSponsors />
+    <!-- 首页内容-功能卡片区域 -->
     <HomeCards />
   </div>
+  <!-- 首页内容-底部区域：链接、社区 -->
   <HomeFooter :is-home="true" />
 </template>
 
@@ -380,6 +387,7 @@ useEventListener(window, 'scroll', handleScroll)
 
 .dark {
   .parallax-container {
+    // 阴影效果
     filter: drop-shadow(0px 0px 10px #409eff);
   }
 }

@@ -10,10 +10,14 @@ const { page } = useData()
 <template>
   <div class="doc-content-wrapper">
     <div class="doc-content-container">
+      <!-- 文档内容 -->
       <Content class="doc-content" />
+      <!-- 底部：“在crodwin上编辑本页面“ -->
       <VPPageFooter />
+      <!-- 上一篇、下一篇 导航 -->
       <VPPageNav />
     </div>
+    <!-- 右侧目录 -->
     <VPTableOfContent v-if="page.headers" />
   </div>
 </template>

@@ -1,4 +1,5 @@
 <template>
+  <!--首页组件-->
   <div class="hero-content">
     <Content />
   </div>

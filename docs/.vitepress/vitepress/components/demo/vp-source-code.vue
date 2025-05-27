@@ -12,6 +12,8 @@ const props = defineProps({
   },
 })
 
+// console.log('props.source', props.source)
+
 const decoded = computed(() => {
   return decodeURIComponent(props.source)
 })

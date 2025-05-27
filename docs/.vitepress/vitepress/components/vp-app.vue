@@ -87,19 +87,24 @@ onMounted(async () => {
 </script>
 
 <template>
+  <!-- 整个项目的布局 -->
   <div class="App">
     <VPSkipLink />
+    <!-- 侧边栏遮罩层，用于h5端，显示侧边栏时显示遮罩层 -->
     <VPOverlay
       class="overlay"
       :show="isSidebarOpen"
       @click="toggleSidebar(false)"
     />
+    <!-- 顶部导航栏 -->
     <VPNav />
+    <!-- 顶部导航栏-h5端触发侧边栏按钮 -->
     <VPSubNav
       v-if="hasSidebar"
       :is-sidebar-open="isSidebarOpen"
       @open-menu="toggleSidebar(true)"
     />
+    <!-- 侧边栏 -->
     <VPSidebar :open="isSidebarOpen" @close="toggleSidebar(false)">
       <template #top>
         <VPSponsors />
@@ -108,6 +113,7 @@ onMounted(async () => {
         <slot name="sidebar-bottom" />
       </template>
     </VPSidebar>
+    <!-- 页面内容区域 -->
     <VPContent>
       <template #content-top>
         <slot name="content-top" />

@@ -5,7 +5,9 @@ import { languages } from '../utils/lang'
 
 import type { HeadConfig } from 'vitepress'
 
+// 页面 HTML 的 <head> 标签中呈现的其他元素
 export const head: HeadConfig[] = [
+  // 添加网站图标
   [
     'link',
     {
@@ -14,6 +16,7 @@ export const head: HeadConfig[] = [
       type: 'image/svg+xm',
     },
   ],
+  // 适配苹果设备图标
   [
     'link',
     {
@@ -22,6 +25,7 @@ export const head: HeadConfig[] = [
       sizes: '180x180',
     },
   ],
+  // 适配苹果设备图标
   [
     'link',
     {
@@ -30,6 +34,7 @@ export const head: HeadConfig[] = [
       color: '#5bbad5',
     },
   ],
+  // 设置主题色
   [
     'meta',
     {
@@ -37,6 +42,7 @@ export const head: HeadConfig[] = [
       content: '#ffffff',
     },
   ],
+  // 设置微软应用图标颜色 用于SEO
   [
     'meta',
     {
@@ -44,6 +50,7 @@ export const head: HeadConfig[] = [
       content: '#409eff',
     },
   ],
+  // 设置微软应用图标 用于SEO
   [
     'meta',
     {
@@ -51,6 +58,7 @@ export const head: HeadConfig[] = [
       content: '/browserconfig.xml',
     },
   ],
+  // 设置 og:image 用于SEO
   [
     'meta',
     {
@@ -58,6 +66,7 @@ export const head: HeadConfig[] = [
       content: '/images/element-plus-og-image.png',
     },
   ],
+  // 设置 og:image:width，用于SEO
   [
     'meta',
     {
@@ -65,6 +74,7 @@ export const head: HeadConfig[] = [
       content: '1200',
     },
   ],
+  // 设置 og:image:height，用于SEO
   [
     'meta',
     {
@@ -72,6 +82,7 @@ export const head: HeadConfig[] = [
       content: '630',
     },
   ],
+  // 设置 og:description，用于SEO
   [
     'meta',
     {
@@ -79,6 +90,7 @@ export const head: HeadConfig[] = [
       content: 'A Vue 3 based component library for designers and developers',
     },
   ],
+  // 添加百度站长验证
   [
     'meta',
     {
@@ -86,6 +98,7 @@ export const head: HeadConfig[] = [
       content: 'codeva-q5gBxYcfOs',
     },
   ],
+  // 添加语言文件
   [
     'script',
     {},
@@ -93,8 +106,9 @@ export const head: HeadConfig[] = [
       window.supportedLangs = ${JSON.stringify(languages)}
     })()`,
   ],
-
+  // 添加语言文件
   ['script', {}, fs.readFileSync(path.resolve(vpRoot, 'lang.js'), 'utf-8')],
+  // 添加谷歌分析
   [
     'script',
     {
@@ -102,6 +116,7 @@ export const head: HeadConfig[] = [
       src: 'https://www.googletagmanager.com/gtag/js?id=UA-175337989-1',
     },
   ],
+  // 添加谷歌分析
   [
     'script',
     {},
@@ -116,6 +131,7 @@ export const head: HeadConfig[] = [
         });
     }`,
   ],
+  // 添加谷歌分析
   [
     'script',
     {
@@ -126,6 +142,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-175337989-1');`,
   ],
+  // 添加谷歌分析
   [
     'script',
     {
@@ -133,6 +150,7 @@ gtag('config', 'UA-175337989-1');`,
       src: 'https://www.googletagmanager.com/gtag/js?id=G-M74ZHEQ1M1',
     },
   ],
+  // 添加谷歌分析
   [
     'script',
     {},
@@ -144,6 +162,7 @@ gtag('config', 'UA-175337989-1');`,
       gtag('config', 'G-M74ZHEQ1M1');
     `,
   ],
+  // 添加谷歌字体
   [
     'script',
     {

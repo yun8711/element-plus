@@ -32,6 +32,7 @@ const currentLink = computed(() => {
 <template>
   <div class="navbar-wrapper">
     <div class="header-container">
+      <!-- 顶部导航栏-logo区域 -->
       <div class="logo-container">
         <a :href="currentLink">
           <img
@@ -42,11 +43,17 @@ const currentLink = computed(() => {
         </a>
       </div>
       <div class="content">
+        <!-- 顶部导航栏-站内搜索组件 -->
         <VPNavbarSearch class="search" :options="theme.agolia" multilang />
+        <!-- 顶部导航栏-导航菜单组件 -->
         <VPNavbarMenu class="menu" />
+        <!-- 顶部导航栏-主题切换组件 -->
         <VPNavbarThemeToggler class="theme-toggler" />
+        <!-- 顶部导航栏-语言切换组件 -->
         <VPNavbarTranslation class="translation" />
+        <!-- 顶部导航栏-社交链接组件 -->
         <VPNavbarSocialLinks class="social-links" />
+        <!-- 顶部导航栏-h5端hamburger组件 -->
         <VPNavbarHamburger
           :active="fullScreen"
           class="hamburger"
